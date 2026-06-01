@@ -2,8 +2,10 @@
 
 ## Project
 
-MyFinAssist is a personal financial assistant project focused on creating a
-current financial and wealth assessment snapshot.
+MyFinAssist is a private, read-only personal finance intelligence app focused
+on monthly financial close workflows: where money is, how balances and
+investments changed, what spending was real, what was an internal transfer, and
+which accounts need manual, CSV, statement, or future sync-based tracking.
 
 Repository: `dpanico/MyFinAssist`
 
@@ -22,8 +24,8 @@ Repository: `dpanico/MyFinAssist`
 - The repository is connected locally at
   `C:\Users\dpani\Documents\Codex\MyFinAssist`.
 - The active branch is `main`.
-- The project currently contains initial documentation and the project-memory
-  tracking structure.
+- The project currently contains documentation, product requirements, and a
+  Phase 1 implementation plan.
 
 ## Conversation Context
 
@@ -32,11 +34,16 @@ Repository: `dpanico/MyFinAssist`
 - The GitHub repository was cloned into the local workspace.
 - The user then requested durable Markdown tracking for progress, decisions,
   and context for the duration of the project.
+- The user provided the full product brief for a fresh Next.js/Supabase personal
+  finance intelligence app and requested a concise implementation plan before
+  any code is written.
 
 ## Next Handoff Notes
 
 - Start each new work session by reading this file, `docs/progress-log.md`, and
   `docs/decisions.md`.
+- Read `docs/product-requirements.md` and
+  `docs/phase-1-implementation-plan.md` before implementing Phase 1.
 - When making a project change, update the Markdown memory files in the same
   commit as the implementation whenever practical.
 - Keep commits focused and push after each completed change.

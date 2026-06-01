@@ -7,6 +7,8 @@ This project is built in stages. Before continuing work from any machine or
 session, review:
 
 - [Project context](docs/project-context.md)
+- [Product requirements](docs/product-requirements.md)
+- [Phase 1 implementation plan](docs/phase-1-implementation-plan.md)
 - [Progress log](docs/progress-log.md)
 - [Decision record](docs/decisions.md)
 

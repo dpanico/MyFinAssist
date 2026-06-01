@@ -34,3 +34,83 @@ Implications:
 - Commits should be focused and named clearly.
 - If a change affects project direction or implementation assumptions, update
   the Markdown memory files before committing.
+
+## DEC-003: Build a Fresh Read-Only Finance Intelligence App
+
+Status: Accepted
+
+Date: 2026-06-01
+
+Decision: Build MyFinAssist as a fresh private web app. Do not import, depend
+on, reference, or recreate an existing Excel workbook or Google Sheet.
+
+Rationale: The app should become a durable personal finance intelligence system
+with normalized data models, not a spreadsheet wrapper.
+
+Implications:
+
+- Spreadsheet import can exist later only as a generic CSV/manual data path,
+  not as a dependency on a specific workbook.
+- The app should stay platform-agnostic across financial institutions,
+  providers, and account lifecycle changes.
+
+## DEC-004: Keep the App Read-Only and Analytical
+
+Status: Accepted
+
+Date: 2026-06-01
+
+Decision: MyFinAssist will explain financial data but will not move money,
+place trades, recommend buys or sells, optimize taxes, or store banking
+credentials.
+
+Rationale: The product goal is insight and monthly financial review, not
+financial execution or regulated advice.
+
+Implications:
+
+- No trading, bill pay, ACH, tax optimization, or investment recommendation
+  features should be added.
+- Provider credentials and financial secrets must not be stored in code, seed
+  data, or client-side bundles.
+
+## DEC-005: Use a Supabase-Backed Next.js Foundation
+
+Status: Accepted
+
+Date: 2026-06-01
+
+Decision: Use Next.js, React, TypeScript, Tailwind CSS, Supabase Postgres,
+Supabase Auth, Recharts, Zod, and TanStack Table or equivalent unless a strong
+technical reason emerges later.
+
+Rationale: This stack supports authenticated full-stack development, typed UI,
+secure Postgres storage, charting, validation, and review tables with a small
+operational footprint.
+
+Implications:
+
+- Phase 1 should include Supabase migrations, row-level security, auth
+  structure, demo seed data, and setup docs.
+- Future provider integrations should be added behind adapter interfaces rather
+  than embedded directly in pages.
+
+## DEC-006: Treat Sync as Optional, Not Foundational
+
+Status: Accepted
+
+Date: 2026-06-01
+
+Decision: Design around multiple data paths: automatic sync, CSV import,
+statement upload, and manual entry. Phase 1 will include mock/demo connector
+interfaces only.
+
+Rationale: Not all accounts can sync completely or reliably, and the app must
+remain useful when accounts are manual, balance-only, or statement-based.
+
+Implications:
+
+- Every account needs tracking method, sync status, and data quality fields.
+- Dashboards and workflows must respect tracking method and data quality.
+- Real Plaid, SimpleFIN, Teller, SnapTrade, OpenAI, OCR, and other integrations
+  are future phases.
