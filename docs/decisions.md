@@ -114,3 +114,25 @@ Implications:
 - Dashboards and workflows must respect tracking method and data quality.
 - Real Plaid, SimpleFIN, Teller, SnapTrade, OpenAI, OCR, and other integrations
   are future phases.
+
+## DEC-007: Use Demo-Mode UI Until Supabase Is Configured
+
+Status: Accepted
+
+Date: 2026-06-01
+
+Decision: Phase 1 UI workflows use fake demo data and local browser storage so
+the app can run without real financial data or provider credentials. Supabase
+migrations, RLS, Auth utilities, and seed data are included so persistence can
+be connected when a Supabase project is configured.
+
+Rationale: The first phase must be useful as a foundation and locally runnable
+without requiring real providers or sensitive data.
+
+Implications:
+
+- Demo UI data is not a substitute for production persistence.
+- Later phases should wire account, institution, balance, transaction, and
+  statement workflows to Supabase queries and mutations.
+- The app must continue to avoid real credentials and real account data in seed
+  data and source code.

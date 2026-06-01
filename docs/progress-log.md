@@ -30,3 +30,21 @@
 - Confirmed there are no true blocking questions before Phase 1.
 - Documented the conservative assumption that Phase 1 should use demo data,
   mock connector interfaces, and no real provider integrations.
+
+### Started Phase 1 Implementation
+
+- Received approval to proceed with Phase 1 only.
+- Confirmed the repository was not initialized as a Next.js app yet.
+- Added a Next.js/TypeScript/Tailwind project foundation.
+- Added Supabase migrations, RLS policies, and fake demo seed data.
+- Added tested financial calculation helpers and a mock Connector Lab provider.
+- Added app shell, auth structure, account/institution management, manual
+  balance entry, default category view, mock Connector Lab, Statement Intake
+  placeholder review workflow, and Phase 1 placeholder module pages.
+- Verified `npm run test`, `npm run lint`, `npm run typecheck`, and
+  `npm run build`.
+- Started the built app locally at `http://127.0.0.1:3000` and confirmed all
+  Phase 1 routes plus `/api/mock-connectors` return HTTP 200.
+- Kept excluded features out of scope: no real provider integrations, no AI/OCR,
+  no CSV engine, no trading, no bill pay, no money movement, no tax planning,
+  no investment recommendations, and no spreadsheet dependency.
