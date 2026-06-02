@@ -48,3 +48,16 @@
 - Kept excluded features out of scope: no real provider integrations, no AI/OCR,
   no CSV engine, no trading, no bill pay, no money movement, no tax planning,
   no investment recommendations, and no spreadsheet dependency.
+
+### Phase 1.1 Verification and Hardening
+
+- Reviewed Phase 1 against the original acceptance criteria and documented
+  complete, partial, manual setup, and future-phase items.
+- Added a Phase 1.1 Supabase migration that hardens child-table write policies
+  so referenced parent rows must belong to the authenticated user.
+- Expanded README setup, environment, Supabase local/live, manual verification,
+  known limitation, and audit-warning documentation.
+- Documented that Phase 1 demo UI state is local-storage backed until Supabase
+  persistence is wired.
+- Narrowed the lint script to `src` so quality checks do not hang while scanning
+  non-source workspace folders on Windows.

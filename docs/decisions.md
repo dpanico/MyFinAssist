@@ -136,3 +136,25 @@ Implications:
   statement workflows to Supabase queries and mutations.
 - The app must continue to avoid real credentials and real account data in seed
   data and source code.
+
+## DEC-008: Harden RLS for Cross-Table Ownership Before Phase 2
+
+Status: Accepted
+
+Date: 2026-06-01
+
+Decision: Child-table insert and update policies must validate ownership of
+referenced parent rows, not only `user_id = auth.uid()` on the child row.
+
+Rationale: A user-owned child row could otherwise reference another user's
+account, category, provider, transaction, document, or extraction ID. That does
+not expose full parent data through normal selects, but it creates an unsafe
+cross-user attachment path in financial records.
+
+Implications:
+
+- RLS policies for account balances, transactions, transfer matches, holdings,
+  investment activity, import jobs, uploaded documents, document extractions,
+  and extracted statement items include parent ownership checks.
+- Supabase persistence wiring should be verified against these policies before
+  Phase 2 CSV workflows are added.
